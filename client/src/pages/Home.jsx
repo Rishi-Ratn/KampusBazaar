@@ -1,8 +1,8 @@
 import React from 'react'
-import ImageSlider from '../components/ImageSlider'
-import ListingHomePage from '../components/ListingHomePage'
-import Footer from '../components/Footer'
-import ListingHomePage2 from '../components/ListingHomePage2'
+import ImageSlider from '../components/homepage/ImageSlider'
+import ListingHomePage from '../components/homepage/ListingHomePage'
+import Footer from '../components/headerandfooter/Footer'
+import ListingHomePage2 from '../components/homepage/ListingHomePage2'
 
 function Home() {
   return (

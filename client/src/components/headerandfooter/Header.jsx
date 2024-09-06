@@ -52,7 +52,6 @@ export default function Header() {
               </div>
               </Link>
           
-
           
             <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg items-center hidden md:flex md:w-5/12'>
                 <input value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)} type="text" placeholder='Search Items' className='bg-transparent focus:outline-none w-24 sm:w-full' />
@@ -60,15 +59,6 @@ export default function Header() {
                     <FaSearch className="text-slate-600 cursor-pointer"/>
                 </button>  
             </form>
-        
-            
-            {/* <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg flex items-center md:w-5/12'>
-                <input value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)} type="text" placeholder='Search Items' className='bg-transparent focus:outline-none w-24 sm:w-full' />
-                <button>
-                    <FaSearch className="text-slate-600 cursor-pointer"/>
-                </button>  
-            </form> */}
-
 
             <DarkModeToggle/>
 

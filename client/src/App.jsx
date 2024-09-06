@@ -2,7 +2,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
-import Header from "./components/Header";
+import Header from "./components/headerandfooter/Header";
 import Home from "./pages/Home";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateListing from "./pages/CreateListing";
@@ -10,6 +10,7 @@ import UpdateListing from "./pages/UpdateListing";
 import MyAds from "./pages/MyAds";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
+import Chat from "./pages/Chat";
 
 export default function App() {
   return <BrowserRouter>
@@ -25,6 +26,7 @@ export default function App() {
       <Route path="/create-ad" element={<CreateListing />} />
       <Route path="/my-ads" element={<MyAds />} />
       <Route path="/update-ad/:listingId" element={<UpdateListing />} />
+      <Route path="/chat" element={<Chat />} />
     </Route>
   </Routes>
   </BrowserRouter>

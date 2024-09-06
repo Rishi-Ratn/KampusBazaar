@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import {FaEye} from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice.js';
@@ -70,7 +69,6 @@ function SignIn() {
               <input onChange={handleChange} className='p-2 mt-3 rounded-xl border' type="email" id='email' placeholder='Email' required/>
               <div className="">
                 <input onChange={handleChange} className='p-2 mt-3 mb-3 rounded-xl border w-full' type='password' id="password" placeholder='Password' required />
-                {/* <FaEye className='absolute top-4 right-3 fill-slate-500 cursor-pointer translate-y-1/2'/> */}
               </div>
               <button disabled={loading} className=' bg-[#42c8b7] uppercase hover:scale-105 duration-300 rounded-xl p-2 text-white'> {loading ? 'Loading...' : 'Login'} </button>
             </form>
@@ -95,10 +93,6 @@ function SignIn() {
             </div>
           </div>
 
-          {/* image-container
-          <div className="md:w-1/2 hidden sm:block ">
-            <img className='rounded-2xl' src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg" alt="" />
-          </div> */}
       </div>
     </section>
   )

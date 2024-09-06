@@ -9,3 +9,21 @@
     }
   }
 
+/* dark mode looking scrollbar */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: #989797;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #42c8b7;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #80dace;
+}

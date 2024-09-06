@@ -7,16 +7,11 @@ function SignUp() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  // const [otp, setOtp] = useState('');
-  // const [step, setStep] = useState(1); //Step 1 : user info and step2 otp verification
   const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({...formData, [e.target.id] : e.target.value});
   };
-  // const handleotpChange = (e) => {
-  //   setOtp(e.target.value);
-  // } 
-  // console.log(formData);
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -36,7 +31,7 @@ function SignUp() {
       }    
       setLoading(false);
       setError(null);
-      // setStep(2);
+
       navigate('/sign-in');
     } catch (error) {
       setLoading(false);
@@ -44,28 +39,6 @@ function SignUp() {
     }
   };
 
-  // const handleOtpSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     setLoading(true);
-  //     const res = await fetch('/api/auth/verify-otp',{
-  //       method: "POST",
-  //       headers: {'Content-Type': 'application/json'},
-  //       body: JSON.stringify({email: formData.email, otp, username: formData.username, password: formData.password}),
-  //     });
-  //     const data = await res.json();
-  //     setLoading(false);
-  //     if(data.success === false) {
-  //       setError(data.message);
-  //       return;
-  //     };
-  //     setError(null);
-  //     navigate('/sign-in');
-  //   } catch (error) {
-  //     setLoading(false);
-  //     setError(error.message);
-  //   }
-  // }
 
   return (
     <section className='bg-gray-50 pb-12 pt-4  dark:bg-slate-800 min-h-fit flex items-center justify-center'>
@@ -78,7 +51,6 @@ function SignUp() {
             <p className='text-sm mt-4 text-[#42c8b7]'> New User? Create an Account first</p>
             </div>
 
-            {/* { step === 1 ? ( */}
             <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
               <input onChange={handleChange} className='p-2 mt-8 rounded-xl border' type="text" id='username' placeholder='Full Name' required />
               <input onChange={handleChange} className='p-2 mt-3 rounded-xl border' type="email" id='email' placeholder='Email' required/>
@@ -88,15 +60,9 @@ function SignUp() {
               </div>
               <button disabled={loading} className=' bg-[#42c8b7] uppercase hover:scale-105 duration-300 rounded-xl p-2 text-white'>{loading ? 'Loading...' : 'sign up'}</button>
             </form>
-            {/* ) : (
-              <form onSubmit={handleOtpSubmit}>
-                <input onChange={handleotpChange} type="text" className='p-2 mt-8 rounded-xl border' placeholder='Enter OTP' required />
-                <button disabled={loading} className='bg-[#42c8b7] uppercase hover:scale-105 duration-300 rounded-xl p-2 text-white mt-4 ' >{loading ? 'Loading...' : 'Verify OTP'}</button>
-              </form>
-            )} */}
+
             {error && <p className= ' mt-2 text-red-500 '>{error && "User already exists with this Email !"}</p>}
 
-          {/* { step === 1 && ( */}
             <>
             <div className="mt-10 grid grid-cols-3 items-center text-gray-500">
               <hr className='border-gray-500'/>
@@ -115,7 +81,7 @@ function SignUp() {
               </Link>
             </div>
             </>
-          {/* )} */}
+
           </div>
 
           {/* image-container */}

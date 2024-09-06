@@ -1,7 +1,7 @@
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { signOutUserStart, signOutUserSuccess, signOutUserFailure} from '../redux/user/userSlice.js';
+import { signOutUserStart, signOutUserSuccess, signOutUserFailure} from '../../redux/user/userSlice.js';
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -29,7 +29,7 @@ export default function Dropdown() {
     <>
     <div onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} className="flex bg-[#42c8b7] hover:bg-slate-300  gap-2 px-2 py-2.5 rounded-lg items-center cursor-pointer relative " >
         <img className='rounded-full h-6 w-6 md:h-7 md:w-7 object-cover cursor-pointer' src={currentUser.avatar} alt=''/>
-        <div className='text-sm sm:text-lg '> {currentUser.username.split(' ')[0]} </div>
+        <div className='text-sm sm:text-lg '> {currentUser?.username?.split(' ')[0] || ''} </div>
         { !isOpen ? <SlArrowDown className='' /> : <SlArrowUp className=''/>}
         { isOpen && 
            <div onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} className="right-[0px] md:left-[0px] absolute top-[47px] bg-slate-100 flex flex-col rounded-xl w-40 sm:w-50 z-50 ">
